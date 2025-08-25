@@ -7,6 +7,16 @@ import { CurriculumInteractive } from "./components/CurriculumInteractive/Curric
 import { CV_DATA } from "./utils/CV_DATA";
 import { GridBackground } from "./components/GridBackground/GridBackground";
 import { getDataFromStorage, removeFromStorage, saveDataInStorage } from "./helpers/localStorage/localStorage";
+import { Route, Routes } from "react-router-dom";
+import { Profile } from "./components/Profile/Profile";
+import { Experience } from "./components/Experience/Experience";
+import { Education } from "./components/Education/Education";
+import { ContactSection } from "./components/ContactSection/ContactSection";
+import { Experiences } from "./components/Experiences/Experiences";
+import { EducationList } from "./components/EducationList/EducationList";
+import { Skills } from "./components/Skills/Skills";
+import { DevLanguages } from "./components/DevLanguages/DevLenguages";
+import { LanguagesList } from "./components/LanguagesList/LanguagesList";
 
 const INITIAL_FORM_STATE = {
 	contactName: "",
@@ -235,41 +245,93 @@ export const App = () => {
 	return (
 		<div className={`app-container container ${nightMode ? "night-mode-active" : ""}`}>
 			<GridBackground />
-			{!cvView && (
-				<CvSelector
-					handleCurriculumView={handleCurriculumView}
-					nightMode={nightMode}
-					onToggleNightMode={onToggleNightMode}
+			<Routes>
+				<Route path="/" element={<CvSelector nightMode={nightMode} onToggleNightMode={onToggleNightMode} />} />
+				<Route
+					path="/traditional-cv"
+					element={
+						<CurriculumTradicional
+							switchToMainScreen={switchToMainScreen}
+							nightMode={nightMode}
+							onToggleNightMode={onToggleNightMode}
+						/>
+					}
+				>
+					<Route path="/traditional-cv/profile" element={<Profile cvData={cvData} />} />
+					<Route path="/traditional-cv/experiences" element={<Experiences cvData={cvData} />}>
+						<Route
+							path="/traditional-cv/experiences/frontend-developer"
+							element={<Experience experience={cvData.experiences[0]} />}
+						/>
+						<Route
+							path="/traditional-cv/experiences/director"
+							element={<Experience experience={cvData.experiences[1]} />}
+						/>
+						<Route
+							path="/traditional-cv/experiences/supervisor"
+							element={<Experience experience={cvData.experiences[2]} />}
+						/>
+					</Route>
+					<Route path="/traditional-cv/education" element={<Education cvData={cvData} />}>
+						<Route path="/traditional-cv/education/degree" element={<EducationList cvData={cvData} />} />
+						<Route path="/traditional-cv/education/skills" element={<Skills skills={cvData.skills} />} />
+						<Route
+							path="/traditional-cv/education/dev-languages"
+							element={<DevLanguages devLanguages={cvData.devLanguages} />}
+						/>
+						<Route
+							path="/traditional-cv/education/languages"
+							element={<LanguagesList languages={cvData.languages} />}
+						/>
+					</Route>
+					<Route
+						path="/traditional-cv/contact"
+						element={
+							<ContactSection
+								form={form}
+								error={error}
+								onFormSubmit={onFormSubmit}
+								onInputChange={onInputChange}
+								onDeleteForm={onDeleteForm}
+							/>
+						}
+					/>
+				</Route>
+				<Route
+					path="/interactive-cv"
+					element={
+						<CurriculumInteractive
+							switchToMainScreen={switchToMainScreen}
+							cvView={cvView}
+							cvData={cvData}
+							form={form}
+							error={error}
+							setError={setError}
+							onFormSubmit={onFormSubmit}
+							onInputChange={onInputChange}
+							onDeleteForm={onDeleteForm}
+							nightMode={nightMode}
+							onToggleNightMode={onToggleNightMode}
+						/>
+					}
 				/>
-			)}
-			{cvView === AppTabs.CV_TRADICIONAL && (
-				<CurriculumTradicional
-					cvData={cvData}
-					form={form}
-					error={error}
-					onFormSubmit={onFormSubmit}
-					onInputChange={onInputChange}
-					onDeleteForm={onDeleteForm}
-					switchToMainScreen={switchToMainScreen}
-					nightMode={nightMode}
-					onToggleNightMode={onToggleNightMode}
-				/>
-			)}
-			{cvView === AppTabs.CV_INTERACTIVE && (
-				<CurriculumInteractive
-					switchToMainScreen={switchToMainScreen}
-					cvView={cvView}
-					cvData={cvData}
-					form={form}
-					error={error}
-					setError={setError}
-					onFormSubmit={onFormSubmit}
-					onInputChange={onInputChange}
-					onDeleteForm={onDeleteForm}
-					nightMode={nightMode}
-					onToggleNightMode={onToggleNightMode}
-				/>
-			)}
+				{/* {cvView === AppTabs.CV_INTERACTIVE && (
+					<CurriculumInteractive
+						switchToMainScreen={switchToMainScreen}
+						cvView={cvView}
+						cvData={cvData}
+						form={form}
+						error={error}
+						setError={setError}
+						onFormSubmit={onFormSubmit}
+						onInputChange={onInputChange}
+						onDeleteForm={onDeleteForm}
+						nightMode={nightMode}
+						onToggleNightMode={onToggleNightMode}
+					/>
+				)} */}
+				<Route path="*" element={<h1>NO SE ENCONTRO LA PAGINA</h1>} />
+			</Routes>
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
-import { Tabs } from "./Tabs";
 
 /**
  * Navigation component
@@ -17,20 +17,21 @@ import { Tabs } from "./Tabs";
  * @param {(tab: string) => void} props.handleActiveTab  Callback invoked with the new tab value when a tab is clicked
  * @returns {JSX.Element} A nav element containing tab buttons
  */
-export const Navigation = ({ activeTab, handleActiveTab }) => {
+export const Navigation = () => {
 	return (
 		<nav className="navigation">
-			{Object.entries(Tabs).map(([property, value]) => {
-				return (
-					<button
-						key={property}
-						className={`tab ${activeTab === value ? "active" : ""}`}
-						onClick={() => handleActiveTab(value)}
-					>
-						{value}
-					</button>
-				);
-			})}
+			<NavLink to="/traditional-cv/profile" className={`tab`}>
+				Perfil
+			</NavLink>
+			<NavLink to="/traditional-cv/experiences" className={`tab`}>
+				Experience
+			</NavLink>
+			<NavLink to="/traditional-cv/education" className={`tab`}>
+				Formacion
+			</NavLink>
+			<NavLink to="/traditional-cv/contact" className={`tab`}>
+				Contact
+			</NavLink>
 		</nav>
 	);
 };

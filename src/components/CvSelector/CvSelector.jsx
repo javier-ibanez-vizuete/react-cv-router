@@ -1,6 +1,6 @@
 import "./CvSelector.css";
-import { AppTabs } from "./AppTabs.js";
 import { NightMode } from "../NightMode/NightMode.jsx";
+import { NavLink } from "react-router-dom";
 
 /**
  * CvSelector
@@ -18,7 +18,7 @@ import { NightMode } from "../NightMode/NightMode.jsx";
  *
  * @returns {JSX.Element} The CvSelector component.
  */
-export const CvSelector = ({ handleCurriculumView, nightMode, onToggleNightMode }) => {
+export const CvSelector = ({ nightMode, onToggleNightMode }) => {
 	return (
 		<section className="cv-selector-modal">
 			<NightMode
@@ -29,19 +29,8 @@ export const CvSelector = ({ handleCurriculumView, nightMode, onToggleNightMode 
 			<h1 className="title">Bienvenido al Curriculum de Javier Ibáñez Vizuete</h1>
 			<p className="subtitle">¿Que Curriculum quiere visualizar?</p>
 			<div className="cv-selector-btns-container">
-				{Object.entries(AppTabs).map(([property, value]) => {
-					return (
-						<button
-							key={property}
-							className={`cv-selector-btn ${
-								value === AppTabs.CV_TRADICIONAL ? "tradicional" : "interactive"
-							}`}
-							onClick={() => handleCurriculumView(value)}
-						>
-							{value}
-						</button>
-					);
-				})}
+				<NavLink to="/traditional-cv" className={`cv-selector-btn traditional`}>Curriculum Tradicional</NavLink>
+				<NavLink to="/interactive-cv" className={`cv-selector-btn interactive`}>Curriculum Interactivo</NavLink>
 			</div>
 		</section>
 	);

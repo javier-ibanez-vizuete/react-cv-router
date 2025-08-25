@@ -32,12 +32,12 @@
 	letter-spacing: 2px;
 }
 
-.cv-selector-btn.tradicional {
+.cv-selector-btn.traditional {
 	background-color: var(--btn-secondary-color);
 	color: var(--secondary-text-color);
 }
 
-.cv-selector-btn.tradicional:hover {
+.cv-selector-btn.traditional:hover {
 	background-color: #00212e;
 	box-shadow: var(--shadow-hover);
 	transform: translateY(-1px);

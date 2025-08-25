@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { EducationTabs } from "../EducationTabs";
 import "./EducationNav.css";
 
@@ -16,7 +17,19 @@ import "./EducationNav.css";
 export const EducationNav = ({ educationTab, setEducationTab }) => {
 	return (
 		<div className="navigation">
-			{Object.entries(EducationTabs).map(([property, value]) => {
+			<NavLink to="/traditional-cv/education/degree" className={`tab`}>
+				Formacion Academica
+			</NavLink>
+			<NavLink to="/traditional-cv/education/skills" className={`tab`}>
+				Habilidades Tecnicas
+			</NavLink>
+			<NavLink to="/traditional-cv/education/dev-languages" className={`tab`}>
+				Lenguajes de programación
+			</NavLink>
+			<NavLink to="/traditional-cv/education/languages" className={`tab`}>
+				Idiomas
+			</NavLink>
+			{/* {Object.entries(EducationTabs).map(([property, value]) => {
 				return (
 					<button
 						key={property}
@@ -26,7 +39,7 @@ export const EducationNav = ({ educationTab, setEducationTab }) => {
 						{value}
 					</button>
 				);
-			})}
+			})} */}
 		</div>
 	);
 };

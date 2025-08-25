@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { ExperiencesTabs } from "../ExperiencesTabs";
 import "./ExperiencesNav.css";
 
@@ -15,17 +16,15 @@ import "./ExperiencesNav.css";
 export const ExperiencesNav = ({ experienceTab, setExperienceTab }) => {
 	return (
 		<div className="navigation">
-			{Object.entries(ExperiencesTabs).map(([property, value]) => {
-				return (
-					<button
-						key={property}
-						className={`tab ${experienceTab === value ? "active" : ""}`}
-						onClick={() => setExperienceTab(value)}
-					>
-						{value}
-					</button>
-				);
-			})}
+			<NavLink to="/traditional-cv/experiences/frontend-developer" className={`tab`}>
+				Frontend Developer
+			</NavLink>
+			<NavLink to="/traditional-cv/experiences/director" className={`tab`}>
+				Director
+			</NavLink>
+			<NavLink to="/traditional-cv/experiences/supervisor" className={`tab`}>
+				Supervisor
+			</NavLink>
 		</div>
 	);
 };

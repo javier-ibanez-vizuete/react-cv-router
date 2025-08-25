@@ -8,6 +8,7 @@ import { Education } from "../Education/Education";
 import { ContactSection } from "../ContactSection/ContactSection";
 import { Footer } from "../Footer/Footer";
 import { getDataFromStorage, saveDataInStorage } from "../../helpers/localStorage/localStorage";
+import { Outlet } from "react-router-dom";
 
 /**
  * CurriculumTradicional
@@ -17,7 +18,6 @@ import { getDataFromStorage, saveDataInStorage } from "../../helpers/localStorag
  * allows switching back to the interactive CV or directly to contact.
  *
  * @param {Object}   props
- * @param {Array<Object>}  props.cvData               – Data object containing CV details.
  * @param {Object}   props.form                        – Form state for contact submissions.
  * @param {string}   props.error                       – Current error message for the contact form.
  * @param {() => void} props.onFormSubmit              – Handler invoked on contact form submission.
@@ -29,17 +29,7 @@ import { getDataFromStorage, saveDataInStorage } from "../../helpers/localStorag
  *
  * @returns {JSX.Element} The CurriculumTradicional component.
  */
-export const CurriculumTradicional = ({
-	cvData,
-	form,
-	error,
-	onFormSubmit,
-	onDeleteForm,
-	onInputChange,
-	switchToMainScreen,
-	nightMode,
-	onToggleNightMode,
-}) => {
+export const CurriculumTradicional = ({ switchToMainScreen, nightMode, onToggleNightMode }) => {
 	const [activeTab, setActiveTab] = useState(() => {
 		const activeTabFromStorage = getDataFromStorage("active_tab");
 		if (activeTabFromStorage) return activeTabFromStorage;
@@ -63,19 +53,7 @@ export const CurriculumTradicional = ({
 				<h2 className="title">Javier Ibáñez Vizuete</h2>
 			</header>
 			<main>
-				{activeTab === Tabs.PROFILE && <Profile cvData={cvData} />}
-				{activeTab === Tabs.EXPERIENCE && <Experiences cvData={cvData} />}
-				{activeTab === Tabs.EDUCATION && <Education cvData={cvData} />}
-				{activeTab === Tabs.CONTACT && (
-					<ContactSection
-						cvData={cvData}
-						form={form}
-						error={error}
-						onFormSubmit={onFormSubmit}
-						onInputChange={onInputChange}
-						onDeleteForm={onDeleteForm}
-					/>
-				)}
+				<Outlet />
 			</main>
 			<Footer
 				switchToMainScreen={switchToMainScreen}

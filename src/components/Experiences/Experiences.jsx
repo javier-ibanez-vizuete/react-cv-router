@@ -3,6 +3,7 @@ import "./Experiences.css";
 import { ExperiencesTabs } from "./ExperiencesTabs";
 import { ExperiencesNav } from "./ExperiencesNav/ExperiencesNav";
 import { Experience } from "../Experience/Experience";
+import { Outlet } from "react-router-dom";
 
 /**
  * Experiences
@@ -27,11 +28,7 @@ export const Experiences = ({ children, cvData, gameResult }) => {
 			<h2 className="title">Experiencia</h2>
 			<ExperiencesNav experienceTab={experienceTab} setExperienceTab={setExperienceTab} />
 			<div className="experiences-container">
-				{experiences
-					.filter(({ position }) => position === experienceTab)
-					.map((experience) => {
-						return <Experience key={experience.company} experience={experience} />;
-					})}
+				<Outlet />
 			</div>
 		</section>
 	);

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AppTabs } from "../CvSelector/AppTabs";
 import { Tabs } from "../Navigation/Tabs";
 import { NightMode } from "../NightMode/NightMode";
@@ -32,9 +33,9 @@ export const Footer = ({
 }) => {
 	return (
 		<footer>
-			<button className="btn secondary-btn" onClick={switchToMainScreen}>
+			<Link className="btn secondary-btn" to="/">
 				Cambiar Curriculum
-			</button>
+			</Link>
 			{activeTab !== Tabs.CONTACT && cvView !== AppTabs.CV_INTERACTIVE && (
 				<button onClick={() => switchToContact(Tabs.CONTACT)} className="btn primary-btn">
 					Contacto

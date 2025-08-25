@@ -6,6 +6,7 @@ import { EducationList } from "../EducationList/EducationList";
 import { Skills } from "../Skills/Skills";
 import { DevLanguages } from "../DevLanguages/DevLenguages";
 import { LanguagesList } from "../LanguagesList/LanguagesList";
+import { Outlet } from "react-router-dom";
 
 /**
  * Education
@@ -35,10 +36,11 @@ export const Education = ({ children, cvData, gameResult }) => {
 			{gameResult?.moleSmasher !== "blocked" && children}
 			<h2 className="title">Formación</h2>
 			<EducationNav educationTab={educationTab} setEducationTab={setEducationTab} />
-			{educationTab === EducationTabs.EDUCATION && <EducationList cvData={cvData} />}
+			<Outlet />
+			{/* {educationTab === EducationTabs.EDUCATION && <EducationList cvData={cvData} />}
 			{educationTab === EducationTabs.SKILLS && <Skills skills={skills} />}
 			{educationTab === EducationTabs.DEV_LENGUAGES && <DevLanguages devLanguages={devLanguages} />}
-			{educationTab === EducationTabs.LANGUAGES && <LanguagesList languages={languages} />}
+			{educationTab === EducationTabs.LANGUAGES && <LanguagesList languages={languages} />} */}
 		</section>
 	);
 };
