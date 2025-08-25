@@ -1,0 +1,29 @@
+.night-mode {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--btn-primary-color);
+	border-radius: var(--border-radius-card);
+	box-shadow: inset var(--shadow-soft);
+	transition-duration: 0.2s;
+}
+
+.night-mode.active {
+	background-color: var(--btn-secondary-color-dark);
+}
+
+.night-mode-btn {
+	flex: 1;
+	padding: var(--spacing-sm) var(--spacing-md);
+	background: none;
+	border: none;
+}
+
+.night-mode:hover {
+	background-color: var(--btn-primary-color-hover);
+}
+
+.night-mode.active:hover {
+	background-color: var(--btn-secondary-color-dark-hover);
+}

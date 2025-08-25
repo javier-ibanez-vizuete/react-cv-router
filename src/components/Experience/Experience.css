@@ -1,0 +1,27 @@
+.experience-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	text-align: center;
+}
+
+.experience-responsabilities-container {
+	margin-top: 1rem;
+}
+
+.experience-responsabilities-container,
+.experience-responsabilities-container > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+@media (width >= 768px) {
+	.experience-container {
+		gap: 1rem;
+	}
+	.experience-responsabilities-container,
+	.experience-responsabilities-container > ul {
+		gap: 1.2rem;
+	}
+}

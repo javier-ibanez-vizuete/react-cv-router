@@ -1,0 +1,33 @@
+.language-circle-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0.5rem;
+	gap: 0.5rem;
+}
+
+.circle {
+	width: 80px;
+	height: 80px;
+	/* transform: rotate(-90deg); */
+}
+
+.bg {
+	fill: none;
+	stroke: #eee;
+	stroke-width: 3.8;
+}
+
+.progress {
+	fill: none;
+	stroke: var(--btn-primary-color);
+	stroke-width: 3.8;
+	stroke-linecap: round;
+	transition: stroke-dasharray 0.5s ease;
+}
+
+.percentage-text {
+	fill: var(--primary-text-color);
+	font-size: 4px;
+	text-anchor: middle;
+}

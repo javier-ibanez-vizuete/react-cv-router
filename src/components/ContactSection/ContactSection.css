@@ -1,0 +1,57 @@
+.contact-section {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+
+	position: relative;
+}
+
+.contact-section-label-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.contact-section-label-container > label::after {
+	content: "*";
+}
+
+.contact-section-label-container input,
+.contact-section-label-container select,
+.contact-section-label-container textarea {
+	background-color: transparent;
+	border: 1px solid var(--btn-secondary-color);
+	border-radius: var(--border-radius-card);
+}
+
+.contact-section-btns-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	.contact-section {
+		gap: 1.5rem;
+	}
+
+	.contact-section-btns-container {
+		gap: 1rem;
+	}
+}
+
+/* ---Portatiles */
+@media (width >= 1024px) {
+	.contact-section-btns-container {
+		flex-direction: row;
+		gap: 1rem;
+	}
+	.contact-section-btns-container > button {
+		flex: 1;
+	}
+}
+
+/* ---Pantallas Escritorio */
+@media (width >= 1440px) {
+}

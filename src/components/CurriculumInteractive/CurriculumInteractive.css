@@ -1,0 +1,18 @@
+.curriculum-interactive-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.curriculum-interactive-container  * {
+	font-family: "Chau Philomene One", sans-serif;
+}
+
+.curriculum-interactive-container main {
+	display: flex;
+	flex-direction: column;
+}
+
+.curriculum-interactive-container .tab, .curriculum-interactive-container .btn {
+	letter-spacing: 2px;
+}

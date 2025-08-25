@@ -1,0 +1,29 @@
+.tic-tac-toe-game-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 1;
+}
+
+.tic-tac-toe-turn-container {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	font-size: 3rem;
+}
+
+.tic-tac-toe-board-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-self: center;
+	gap: 1rem;
+}
+
+.tic-tac-toe-board-container > .square-tic-tac.full-square {
+	background-color: var(--primary-text-color);
+}
+
+.tic-tac-toe-board-container > .square-tic-tac.full-square > span {
+	font-size: 3.5rem;
+	color: var(--secondary-text-color);
+}

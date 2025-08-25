@@ -1,0 +1,151 @@
+.hangman-body-piece {
+	display: flex;
+	flex-direction: column;
+}
+
+.hangman-body-piece > div {
+	background-color: var(--primary-text-color);
+	flex: 1;
+}
+
+.gallows-beam {
+	grid-column: 1 / 1;
+	grid-row: 4 / -1;
+}
+
+.gallows-beam > div {
+	clip-path: polygon(49% 0, 51% 0, 51% 98%, 100% 98%, 100% 100%, 0 100%, 0 98%, 49% 98%);
+}
+
+.gallows-post {
+	grid-column: 1 / 1;
+	grid-row: 2 / -2;
+}
+
+.gallows-post > div {
+	clip-path: polygon(49% 0%, 51% 0%, 51% 100%, 49% 100%);
+}
+
+.gallows-post-corner {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.gallows-post-corner > div {
+	clip-path: polygon(100% 49%, 100% 51%, 51% 51%, 51% 100%, 49% 100%, 49% 51%, 49% 49%);
+}
+
+.crossbeam {
+	grid-column: 2 / 2;
+	grid-row: 1 / 1;
+}
+.crossbeam > div {
+	clip-path: polygon(0 49%, 100% 49%, 100% 51%, 0 51%);
+}
+
+.rope {
+	grid-column: 3 / 3;
+	grid-row: 1 / 1;
+}
+
+.rope > div {
+	clip-path: polygon(51% 49%, 51% 100%, 49% 100%, 49% 51%, 0 51%, 0 49%);
+}
+
+.head {
+	grid-column: 3 / 3;
+	grid-row: 2 / 2;
+}
+
+.head > div {
+	border: 1px solid var(--primary-text-color);
+	border-radius: 50%;
+	background-color: transparent;
+}
+
+.body-piece {
+	grid-column: 3 / 3;
+	grid-row: 3 / 3;
+}
+
+.body-piece > div {
+	clip-path: polygon(
+		0 49%,
+		49% 19%,
+		49% 0,
+		51% 0,
+		51% 19%,
+		100% 49%,
+		100% 51%,
+		51% 21%,
+		51% 100%,
+		49% 100%,
+		49% 21%,
+		0 51%
+	);
+}
+
+.left-arm {
+	grid-column: 2 / 2;
+	grid-row: 3 / 3;
+}
+
+.left-arm > div {
+	/* clip-path: polygon(
+		100% 49%,
+		49% 60%,
+		48% 63%,
+		66% 62%,
+		44% 70%,
+		44% 75%,
+		66% 65%,
+		47% 79%,
+		46% 83%,
+		69% 67%,
+		50% 91%,
+		52% 94%,
+		72% 69%,
+		55% 98%,
+		55% 100%,
+		100% 51%
+	); */
+	clip-path: circle(7% at 94% 50%);
+}
+
+.right-arm {
+	grid-column: 4 / 4;
+	grid-row: 3 / 3;
+}
+
+.right-arm > div {
+	clip-path: circle(7% at 94% 50%);
+	transform: rotateY(180deg);
+}
+
+.legs {
+	grid-column: 3 / 3;
+	grid-row: 4 / 4;
+}
+
+.legs > div {
+	clip-path: polygon(49% 0, 51% 0, 100% 99%, 99% 100%, 50% 2%, 1% 100%, 0 99%);
+}
+
+.left-shoe {
+	grid-column: 2 / 2;
+	grid-row: 5 / -1;
+}
+
+.left-shoe > div {
+	clip-path: ellipse(21% 5% at 100% 4%);
+}
+
+.right-shoe {
+	grid-column: 4 / 4;
+	grid-row: 5 / -1;
+}
+
+.right-shoe > div {
+	clip-path: ellipse(21% 5% at 100% 4%);
+    transform: rotateY(180deg);
+}

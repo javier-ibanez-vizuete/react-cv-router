@@ -1,0 +1,14 @@
+.initial-modal p {
+	font-family: "Chau Philomene One", sans-serif;
+	font-size: 2rem;
+	letter-spacing: 2px;
+	line-height: 200%;
+	text-align: center;
+}
+
+@media (width >= 768px) {
+	.initial-modal button {
+		width: 400px;
+		margin: 0 auto;
+	}
+}

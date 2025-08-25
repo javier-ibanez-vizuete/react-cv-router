@@ -1,0 +1,14 @@
+.languages-list-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	.languages-list-container {
+		flex-direction: row;
+		justify-content: center;
+		gap: 1rem;
+	}
+}

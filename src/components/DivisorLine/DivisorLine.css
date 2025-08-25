@@ -1,0 +1,13 @@
+.divisor-line {
+	background-color: var(--primary-text-color);
+}
+
+.divisor-line.vertical-line {
+	height: 100%;
+	width: 1px;
+}
+
+.divisor-line.horizontal-line {
+	width: 100%;
+	height: 1px;
+}

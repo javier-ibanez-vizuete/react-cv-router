@@ -1,0 +1,8 @@
+.curriculum-complete-section {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 3rem;
+
+	padding: var(--spacing-4xl) 0;
+}

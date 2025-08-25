@@ -1,0 +1,302 @@
+#root {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+
+	flex: 1;
+}
+
+.title,
+.subtitle {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.empty-list-text {
+	font-style: italic;
+	color: #888;
+	text-align: center;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.navigation {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-xs);
+
+	padding: var(--spacing-sm) 0;
+	max-width: 1024px;
+}
+
+.tab {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	cursor: pointer;
+	background-color: var(--btn-xtra-color);
+	border-radius: var(--border-radius-card);
+}
+
+.tab.active {
+	background-color: var(--btn-primary-color);
+	box-shadow: inset var(--shadow-soft);
+	color: var(--secondary-text-color);
+}
+
+.btn {
+	border: none;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--border-radius-card);
+	box-shadow: inset var(--shadow-soft);
+	transition-duration: 0.2s;
+	font-weight: var(--font-weight-bold);
+}
+
+.primary-btn {
+	background-color: var(--btn-primary-color);
+	color: var(--primary-text-color);
+}
+
+.secondary-btn {
+	background-color: var(--btn-secondary-color);
+	color: var(--secondary-text-color);
+}
+
+/* ----Texto para error de formulario/ juegos---- */
+.error-text {
+	font-weight: var(--font-weight-bold);
+	color: red;
+}
+
+/* --- Color del option del formulario contacto */
+.actived-select {
+	color: var(--primary-text-color);
+}
+
+.winner-text {
+	font-size: 1.2rem;
+	text-align: center;
+	align-self: center;
+	color: green;
+	font-weight: var(--font-weight-bold);
+}
+
+main {
+	flex: 1;
+}
+
+/*  ---------------MODO NOCHE ------------------ */
+.app-container.night-mode-active .grid-overlay {
+	background-color: var(--bg-color-dark);
+}
+
+.app-container.night-mode-active .grid-cell {
+	border: 1px solid rgba(141, 131, 131, 0.4);
+}
+
+.app-container.night-mode-active h1,
+.app-container.night-mode-active h2,
+.app-container.night-mode-active h3,
+.app-container.night-mode-active h4,
+.app-container.night-mode-active h5,
+.app-container.night-mode-active h6,
+.app-container.night-mode-active p,
+.app-container.night-mode-active li,
+.app-container.night-mode-active small,
+.app-container.night-mode-active span,
+.app-container.night-mode-active button,
+.app-container.night-mode-active label,
+.app-container.night-mode-active input,
+.app-container.night-mode-active input::placeholder,
+.app-container.night-mode-active .actived-select,
+.app-container.night-mode-active select,
+.app-container.night-mode-active textarea,
+.app-container.night-mode-active textarea::placeholder {
+	color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .night-mode {
+	background-color: var(--btn-secondary-color-dark);
+}
+
+.app-container.night-mode-active .profile-section-btn {
+	background-color: var(--btn-primary-color-dark);
+	color: var(--btn-text-color-dark);
+}
+
+.app-container.night-mode-active .profile-section-btn:hover {
+	background-color: var(--btn-primary-color-dark-hover);
+}
+
+.app-container.night-mode-active .skill-list-item {
+	background-color: var(--btn-secondary-color-dark);
+	color: var(--btn-text-color-dark);
+}
+
+.app-container.night-mode-active .progress {
+	stroke: var(--btn-primary-color-dark);
+}
+
+.app-container.night-mode-active .percentage-text {
+	fill: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .tab {
+	background-color: var(--btn-xtra-color-dark);
+	color: var(--btn-text-color-dark);
+}
+
+.app-container.night-mode-active .tab.active {
+	background-color: var(--btn-primary-color-dark);
+	color: var(--btn-text-color-dark-invert);
+}
+
+.app-container.night-mode-active .tab:hover {
+	background-color: var(--btn-primary-color-dark-hover);
+}
+
+.app-container.night-mode-active .primary-btn {
+	color: var(--btn-text-color-dark);
+	background-color: var(--btn-primary-color-dark);
+}
+.app-container.night-mode-active .primary-btn:hover {
+	background-color: var(--btn-primary-color-dark-hover);
+}
+
+.app-container.night-mode-active .secondary-btn {
+	color: var(--btn-text-color-dark);
+	background-color: var(--btn-secondary-color-dark);
+}
+.app-container.night-mode-active .secondary-btn:hover {
+	background-color: var(--btn-secondary-color-dark-hover);
+}
+
+.app-container.night-mode-active .contact-section-label-container input,
+.app-container.night-mode-active .contact-section-label-container select,
+.app-container.night-mode-active .contact-section-label-container textarea {
+	border-color: var(--primary-text-color-dark);
+}
+
+/* -------------GAMES---------- */
+
+.app-container.night-mode-active .hangman-body-piece > div {
+	background-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .head > div {
+	background-color: transparent;
+	border-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .secret-word-box {
+	border-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .hangman-keyboard-display > button {
+	background-color: var(--btn-secondary-color);
+}
+
+.app-container.night-mode-active .mole-smasher-counter-container {
+	border-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .hole-box {
+	border-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .tic-tac-toe-board-container > .square-tic-tac.full-square {
+	background-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .tic-tac-toe-board-container > .square-tic-tac.full-square > span {
+	color: var(--secondary-text-color-dark);
+}
+
+.app-container.night-mode-active .square-tic-tac {
+	border-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .square-tic-tac.is-selected {
+	background-color: var(--btn-secondary-color);
+}
+
+.app-container.night-mode-active .square-tic-tac.is-selected > span {
+	color: var(--primary-text-color-dark);
+}
+
+/* ------/-GAMES--------- */
+
+.app-container.night-mode-active .floating-text.result-passed {
+	color: rgba(0, 128, 0, 0.5);
+}
+
+.app-container.night-mode-active .floating-text.result-surrendered {
+	color: rgba(255, 0, 0, 0.3);
+}
+
+.app-container.night-mode-active .divisor-line {
+	background-color: var(--primary-text-color-dark);
+}
+
+.app-container.night-mode-active .error-text {
+	color: rgb(227, 19, 19);
+}
+
+.app-container.night-mode-active .winner-text {
+	color: green;
+}
+
+.app-container.night-mode-active .empty-list-text {
+	color: #888;
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	header {
+		gap: 2rem;
+	}
+
+	.navigation {
+		gap: var(--spacing-sm);
+
+		padding: var(--spacing-2xl);
+	}
+
+	.tab:hover {
+		background-color: var(--btn-xtra-color);
+	}
+
+	.primary-btn:hover {
+		background-color: var(--btn-primary-color-hover);
+		box-shadow: inset var(--shadow-hover);
+	}
+
+	.secondary-btn:hover {
+		background-color: var(--btn-secondary-color-hover);
+		box-shadow: inset var(--shadow-hover);
+	}
+}
+
+/* ---Portatiles */
+@media (width >= 1024px) {
+	.navigation {
+		margin: 0 auto;
+
+		gap: var(--spacing-4xl);
+	}
+}
+
+/* ---Pantallas Escritorio */
+@media (width >= 1440px) {
+	#root {
+	}
+}

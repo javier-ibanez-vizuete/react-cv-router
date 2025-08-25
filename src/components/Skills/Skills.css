@@ -1,0 +1,38 @@
+.skills-list-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: stretch;
+	align-content: center;
+	text-align: center;
+	gap: 0.2rem;
+}
+
+.skill-list-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: var(--spacing-xs) var(--spacing-sm);
+	background-color: var(--btn-secondary-color);
+	color: var(--secondary-text-color);
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	.skills-list-container {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.4rem;
+	}
+}
+
+/* ---Portatiles */
+@media (width >= 1024px) {
+	.skills-list-container {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.5rem;
+	}
+}
+
+/* ---Pantallas Escritorio */
+@media (width >= 1440px) {
+}

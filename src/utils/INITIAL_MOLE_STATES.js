@@ -1,0 +1,18 @@
+export const INITIAL_MOLE_STATES = [
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+	{ hasMole: false, isSmashed: false },
+];

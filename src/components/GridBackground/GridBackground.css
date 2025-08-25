@@ -1,0 +1,16 @@
+.grid-overlay {
+	display: grid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: -1;
+	opacity: 1;
+	background-color: var(--bg-color);
+}
+
+.grid-cell {
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgba(193, 191, 191, 0.4);
+}

@@ -1,0 +1,77 @@
+.profile-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	position: relative;
+}
+
+.profile-section-title {
+	align-self: center;
+	font-size: 1.5rem;
+}
+
+.profile-section-about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.profile-section-btn {
+	align-self: center;
+
+	padding: var(--spacing-sm) var(--spacing-2xl);
+	border-radius: var(--border-radius-card);
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	box-shadow: var(--shadow-soft);
+	letter-spacing: 2px;
+	background-color: var(--btn-secondary-color);
+	color: var(--secondary-text-color);
+}
+
+.profile-section-btn:hover {
+	background-color: var(--btn-secondary-color-hover);
+	box-shadow: var(--shadow-hover);
+	transform: translateY(-1px);
+}
+
+.profile-section-professional-description {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	text-align: center;
+}
+
+.profile-section-professional-description > .subtitle {
+	font-size: 1.2rem;
+}
+
+.profile-section-linkedin-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+.profile-section-linkedin-link > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.linkedin-logo-container {
+	width: 60px;
+}
+
+.linkedin-logo-container,
+.linkedin-logo-container picture {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,33 @@
+.hangman-game-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 1;
+}
+
+.hangman-secretword-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.secret-word-box {
+	padding: var(--spacing-lg);
+	border: 1px solid var(--primary-text-color);
+    letter-spacing: 4px;
+}
+
+.hangman-keyboard-display {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 4px;
+}
+
+.hangman-keyboard-display >button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+	background-color: var(--btn-primary-color);
+	border-color: var(--btn-secondary-color);
+}

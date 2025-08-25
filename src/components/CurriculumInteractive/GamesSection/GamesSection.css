@@ -1,0 +1,14 @@
+.games-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+}
+
+.game-number-display {
+    align-self: flex-end;
+    color: #888;
+    padding: var(--spacing-xs);
+    /* background-color: var(--bg-color); */
+    border: 1px solid #888;
+}

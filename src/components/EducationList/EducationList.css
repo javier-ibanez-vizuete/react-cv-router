@@ -1,0 +1,30 @@
+.education-list-tecnologies-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.education-list-tecnologies-container > div {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	.education-list-tecnologies-container > div {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+}
+
+/* ---Portatiles */
+@media (width >= 1024px) {
+	.education-list-tecnologies-container > div {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ---Pantallas Escritorio */
+@media (width >= 1440px) {
+}

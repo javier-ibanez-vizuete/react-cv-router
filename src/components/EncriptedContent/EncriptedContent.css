@@ -1,0 +1,16 @@
+.encripted-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	padding: var(--spacing-4xl) var(--spacing-lg);
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: var(--border-radius-card);
+}
+
+.encripted-content > span {
+	font-size: 3rem;
+	color: var(--secondary-text-color);
+}

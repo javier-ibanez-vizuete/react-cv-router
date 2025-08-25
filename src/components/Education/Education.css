@@ -1,0 +1,26 @@
+.education-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	position: relative;
+}
+
+.education-section > .navigation {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0.5rem;
+}
+
+/* ---Tablets */
+@media (width >= 768px) {
+	.education-section > .navigation {
+		display: flex;
+		gap: var(--spacing-sm);
+	}
+
+	.education-section {
+		gap: 1.5rem;
+	}
+}

@@ -1,0 +1,23 @@
+.square-tic-tac {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: 2px solid var(--primary-text-color);
+	padding: var(--spacing-md) var(--spacing-lg);
+	width: 80px;
+	height: 80px;
+}
+
+.square-tic-tac.is-selected {
+	background-color: var(--btn-primary-color);
+}
+
+.square-tic-tac.is-selected > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	
+	color: var(--secondary-text-color);
+}
